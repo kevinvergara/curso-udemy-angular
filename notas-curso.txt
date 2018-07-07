@@ -5,3 +5,82 @@ seccion2 (typescript)
 -tsc -init ***para inicar un proyecto typescript****
 
 -lat para variables locales
+
+-const **constantes**es como let se puede definir dentro de una funcion****
+
+-si igualas variable a string, solo se puede con string despues
+
+-variable tipo :any, puede recibir cualquier valor.
+
+-**** tipo objeto personalizado****
+    let spiderman = {
+        nombre: "nada"    
+    }
+-**** despues se puede igualar a un objeto igual ese****
+
+-al poner párametros en una funcion, funcion ( parametro?:string ), este seria
+parametro opcional.
+
+-**** funcion con flecha****
+*---
+let funcion = a => a;
+
+recibe parametro a, y retorna a
+*---
+
+*---
+let funcion = (a:number, b:number) => a+b;
+*---
+
+*---
+let funcion = (nombre:string)=>{
+    nombre = nombre+"1";
+    return nombre;
+}
+*---
+
+*---
+el this no se ve afectado ..por ejemplo con el settimeout por ejemplo ...debido a que con la funcion de flecha no apunta al windows ...a las variables de afuera
+*---
+-**************************
+
+- let {nombre,poder} = avenger; ..para igualar variables a sub variables de un obejto
+
+-let [nombre,poder] = avenger; ..para igualar variables a sub variables de un arreglo, pero son secuenciales las igualaciones
+
+-*************promesas****************
+let prom = new Promise( function ( resolve, reject ) {
+   setTimeout( ()=>{
+       console.log("promesa terminada");
+       //resolve();//todo bien
+       reject();//errores
+   },1500);
+});
+
+prom.then( function () {
+    console.log("cuan termina bien");
+} , function () {
+    console.error("cuando sale mal");
+} );
+-*************************************
+
+-***interface***
+interface Xmen {
+    nombre:string,
+    poder:string
+}
+-*************
+
+-el this. hace refencia a la clase en la que se desarrolla
+
+- recordar hacer el index para exportar las clases ..es util, antipaja
+
+-***decorador****
+@funcion...antes del constructor
+
+
+-****************
+
+
+
+
