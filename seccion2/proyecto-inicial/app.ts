@@ -1,1 +1,3 @@
-// Un archivo simple de TypeScript
+const opciones = "todas";
+
+opciones = 2;

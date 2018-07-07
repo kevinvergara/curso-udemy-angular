@@ -1,0 +1,7 @@
+seccion2 (typescript)
+
+-tsc app -w **modo observador***solo para un archivo
+
+-tsc -init ***para inicar un proyecto typescript****
+
+-lat para variables locales

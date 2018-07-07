@@ -1,1 +1,3 @@
-// Codigo de JavaScript
+"use strict";
+var opciones = "todas";
+opciones = 2;
