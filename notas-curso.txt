@@ -106,6 +106,31 @@ interface Xmen {
 
 - para subir a repos, se borra la carpeta de los modulos, pesa mucho, para recuperarla, se tira el comando.. npm install
 
+- para bootstrap npm install bootstrap --save ....el jquery y el popper.sj...y configurar el angular.json
+
+-****boostrap****            
+"styles": [
+  "src/styles.css",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+  "node_modules/jquery/dist/jquery.slim.min.js",
+  "node_modules/popper.js/dist/umd/popper.min.js",
+  "node_modules/bootstrap/dist/js/bootstrap.js"
+]
+-****************
+
+-****routes*****
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+
+const APP_ROUTES: Routes = [
+  { path: 'home', component: HomeComponent},
+  { path: '**', pathMatch: 'full', redirectTo: '' }
+];
+
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
+-***************
 
 
 /******************fin angular*********************/
