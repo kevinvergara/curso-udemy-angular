@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+    <h1>*ngIF</h1>
+    <hr>
+    <div *ngIf="aparece" class="card text-white bg-primary mb-3" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Autor: {{ frase.autor }}</h5>
+        <p class="card-text">Mensaje: {{ frase.mensaje }}</p>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary btn-block" (click)="mostrar()">
+      Mostrar/Ocultar
+    </button>
+  </div>
+  <div class="col">
+    <h1>*ngFor</h1>
+    <hr>
+    <ul class="list-group">
+      <li *ngFor="let personaje of personajes; let i = index" class="list-group-item active">{{ (i+1) + ".- " + personaje.toUpperCase() }}</li>
+    </ul>
+  </div>
+</div>

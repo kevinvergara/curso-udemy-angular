@@ -1,4 +1,4 @@
-seccion2 (typescript)
+/*********************seccion2 (typescript)***************/
 
 -tsc app -w **modo observador***solo para un archivo
 
@@ -76,11 +76,37 @@ interface Xmen {
 - recordar hacer el index para exportar las clases ..es util, antipaja
 
 -***decorador****
-@funcion...antes del constructor
-
-
+@funcion...antes del constructor //metadata
 -****************
 
+-declarar array string==> hola:string[];
 
 
+/*****************fin typescript*******************/
+
+
+
+/****************inicio angular******************/
+-componentes: partes de la pagina, como menu, footer, header...en angular va cambiando.
+
+- directivas estructurales: *ngif = true, va a ocultar o mostrar informacion en angular, *ngFor...foreach.
+
+-*****pasos para crear entorno local***
+1.- instalar el cli
+2.- crar carpeta
+3.- ng new my-app
+4.- ng serve -p 4000 -o
+-*************************************
+
+-******crear componentes consola********
+- ng g c components/footer
+-**************************************
+
+- *ngFor --> *ngFor="let personaje of personajes", en li, no el group
+
+- para subir a repos, se borra la carpeta de los modulos, pesa mucho, para recuperarla, se tira el comando.. npm install
+
+
+
+/******************fin angular*********************/
 
