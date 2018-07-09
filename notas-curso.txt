@@ -126,11 +126,43 @@ import { HomeComponent } from './components/home/home.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent},
+  { path: 'heroe/:id', component: HeroeComponent},
   { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
+--------------agregar al appcomponent ...
+-----
+[routerLink]="['home']" ...asi se llama a la ruta...es un arreglo secuencial.
+
+- para ruta con parametros una funcion en .ts
+
+verHeroe( idx: number ) {
+    this.rouerCrl.navigate( ['/heroe', idx] );
+}
+
+o
+
+<a [routerLink]="['/heroes']" class="btn btn-outline-success btn-block" >Regresar</a>
+
+-se recive, ActivatedRoute, 
+-----
+
 -***************
+
+
+-******servicios*******
+- aca va el acceso a la data, y van los setter and getters
+-**********************
+
+-********pipes*********
+-  funciones para usar, sin importar ni nada, estan en la pagina de angular, por ejemplo el de la fecha, o cambiar a MAY, se usan {{ nombre | uppercase }}
+-**********************
+
+-********parametros para llamar componentes (ejemplo card)*****
+@Input() index: number; .......... para recibir el parametro de afuera
+<app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index;"></app-heroe-tarjeta> ........... asi se envia
+-***************************************************************
 
 
 /******************fin angular*********************/
