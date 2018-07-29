@@ -127,10 +127,10 @@ import { HomeComponent } from './components/home/home.component';
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'heroe/:id', component: HeroeComponent},
-  { path: '**', pathMatch: 'full', redirectTo: '' }
+  { path: '**', pathMatch: 'full', redirectTo: '' } ---cualquier otro path te redirije a otra wea
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });
 --------------agregar al appcomponent ...
 -----
 [routerLink]="['home']" ...asi se llama a la ruta...es un arreglo secuencial.
@@ -157,6 +157,45 @@ o
 
 -********pipes*********
 -  funciones para usar, sin importar ni nada, estan en la pagina de angular, por ejemplo el de la fecha, o cambiar a MAY, se usan {{ nombre | uppercase }}
+
+
+ ---lista pipes utiles---
+    -{{ fecha_ | date:"dd/mm/yy" }}
+    -{{ nombre | uppercase }}
+    -{{ nombre | lowercase }}
+    -{{ nombre | slice:0:3 }}
+    -{{ pi | number:'1.0-2' }} --> 3.14
+    -{{ a | percent:'2.2-2' }} ---> 23.40%
+    -{{ salario | currency:'EUR':true:'4.0-0' }}
+    -{{ heroe | json }}
+    -{{ valorPromesa | async}}
+    -{{ fecha | date:'MMMM - dd'}}
+crear pipe
+
+-- ng g p no0mbrepipe  -- 
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'UpperLow'
+})
+export class  UpperLow implements PipeTransform {
+  transform (value: string): string {
+    value = value.toLowerCase();
+    return value;
+  }
+}
+
+appcomponent
+import { UpperLow } from './pipes/capitalizado.pipe';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    UpperLow
+  ],
+
+
 -**********************
 
 -********parametros para llamar componentes (ejemplo card)*****
@@ -164,6 +203,29 @@ o
 <app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index;"></app-heroe-tarjeta> ........... asi se envia
 
 -***************************************************************
+
+*********+peticiones http******+
+1. -importar la app.modules ... import { HttpClientModule } from '@angular/common/http';
+2.- imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot( ROUTES, { useHash: true } )
+]
+
+3.- para usarlo, insertar en constructor private http: HttpClient
+
+4.- this.http.get("url", {parametro_post} ).subscribe( (respuesta: any) => {
+    //en paises queda la info
+} );
+
+5.- con post
+
+6.- pipe que sirve para filtrar la informacion que se envia----------
+    import { map } from 'rxjs/operators';
+    return this.getQuery('browse/new-releases?limit=20')
+              .pipe( map( data => data['albums'].items ));---version simplificada...del return
+
+*******************************
 
 
 /******************fin angular*********************/

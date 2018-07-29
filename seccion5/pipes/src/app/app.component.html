@@ -1,0 +1,66 @@
+<div class="container">
+  <br>
+  <h1>pipes</h1>
+  <hr>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">variable</th>
+      <th scope="col">pipe</th>
+      <th scope="col">producto</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ nombre }}</td>
+      <td>uppercase</td>
+      <td>{{ nombre | uppercase }}</td>
+    </tr>
+    <tr>
+      <td>{{ nombre }}</td>
+      <td>lowercase</td>
+      <td>{{ nombre | lowercase }}</td>
+    </tr>
+    <tr>
+      <td>{{nombre}}</td>
+      <td>slice:0:3</td><!-- se puede aplicar directo al ngfor -->
+      <td>{{nombre | slice:0:3}}</td><!-- cortar primeras 3 letras, funciona con arreglos igual -->
+    </tr>
+    <tr>
+      <td>{{ pi }}</td>
+      <td>number</td>
+      <td>{{ pi | number:'1.0-2' }}</td>
+    </tr>
+    <tr>
+      <td>{{ a }}</td>
+      <td>percent</td>
+      <td>{{ a | percent:'2.2-2' }}</td>
+    </tr>
+    <tr>
+      <td>{{ salario }}</td>
+      <td>cambio moneda</td>
+      <td>{{ salario | currency:'EUR':true:'4.0-0' }}</td>
+    </tr>
+    <tr>
+      <td>{{ heroe }}</td>
+      <td>json</td>
+      <td>{{ heroe | json }}</td>
+    </tr>
+    <tr>
+      <td>{{ valorPromesa }}</td>
+      <td>async</td>
+      <td>{{ valorPromesa | async}}</td>
+    </tr>
+    <tr>
+      <td>{{ fecha }}</td>
+      <td>fecha</td>
+      <td>{{ fecha | date:'MMMM - dd'}}</td>
+    </tr>
+    <tr>
+      <td>{{ nombree }}</td>
+      <td>propio pipe</td>
+      <td>{{ nombree | UpperLow }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
